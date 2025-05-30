@@ -1,4 +1,4 @@
-/* Font & General Styling */
+/* General Body Styling */
 body {
   margin: 0;
   padding: 0;
@@ -9,12 +9,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Container Styling */
+/* Container Styling with Opening Animation */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px 20px;
-  animation: fadeInSlideUp 1.5s ease-out;
+  animation: fadeInUp 2s ease-out;
 }
 
 /* Title */
@@ -24,7 +24,7 @@ h1 {
   margin-bottom: 25px;
 }
 
-/* Poem Block */
+/* Poem Styling */
 .poem pre {
   white-space: pre-wrap;
   font-size: 1.3em;
@@ -57,45 +57,70 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Reveal Section */
+/* Surprise Box (Hidden & Transition) */
 #surprise {
-  margin-top: 30px;
-  transition: all 1s ease;
+  margin-top: 40px;
   opacity: 0;
-  transform: scale(0.5);
+  transform: scale(0.6);
+  transition: all 0.7s ease-in-out;
 }
 
+/* Active Reveal */
 #surprise.show {
   opacity: 1;
   transform: scale(1);
 }
 
-#surprise h2 {
-  font-size: 2em;
-  color: #880e4f;
-  animation: pulse 2s infinite;
+/* Surprise Text Glow Effect */
+.love-text {
+  font-family: 'Poiret One', cursive;
+  color: #ff4fcf;
+  font-size: 2.5em;
+  text-shadow: 0 0 8px #ff99dd, 0 0 20px #ff66c4, 0 0 30px #ff33aa;
+  animation: bounceIn 1s ease, glowPulse 2s ease-in-out infinite;
 }
 
-/* Hidden Class */
-.hidden {
-  display: none;
-}
-
-/* Opening Animation */
-@keyframes fadeInSlideUp {
-  0% {
+/* Fade In + Slide Up Animation */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
     transform: translateY(50px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Pulse for love message */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+/* Bounce + Pop In */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Glowing Text Pulse Animation */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 8px #ff99dd, 0 0 20px #ff66c4, 0 0 30px #ff33aa;
+  }
+  50% {
+    text-shadow: 0 0 16px #ffccf9, 0 0 40px #ff99dd, 0 0 60px #ff66c4;
+  }
+  100% {
+    text-shadow: 0 0 8px #ff99dd, 0 0 20px #ff66c4, 0 0 30px #ff33aa;
+  }
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
 }
