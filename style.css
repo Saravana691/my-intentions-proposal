@@ -1,56 +1,101 @@
+/* Font & General Styling */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
-  background-color: #fffafc;
-  color: #333;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(to bottom, #fff0f5, #fce4ec);
+  color: #3d3d3d;
   text-align: center;
+  overflow-x: hidden;
 }
 
+/* Container Styling */
 .container {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  animation: fadeInSlideUp 1.5s ease-out;
 }
 
+/* Title */
 h1 {
-  color: #d63384;
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #c2185b;
+  margin-bottom: 25px;
 }
 
+/* Poem Block */
 .poem pre {
   white-space: pre-wrap;
-  font-size: 1.1em;
-  line-height: 1.6;
-  background: #f9f0f5;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.8;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
 }
 
+/* Button Styling */
 button {
   margin-top: 30px;
-  padding: 12px 20px;
-  font-size: 1em;
-  color: white;
-  background-color: #ff69b4;
+  padding: 14px 28px;
+  font-size: 1.1em;
+  font-family: 'Poiret One', cursive;
+  background-color: #ff80ab;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  color: white;
   cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-  background-color: #e055a0;
+  background-color: #ff4081;
+  transform: scale(1.05);
 }
 
+/* Reveal Section */
 #surprise {
-  margin-top: 20px;
+  margin-top: 30px;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: scale(0.5);
 }
 
+#surprise.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#surprise h2 {
+  font-size: 2em;
+  color: #880e4f;
+  animation: pulse 2s infinite;
+}
+
+/* Hidden Class */
 .hidden {
   display: none;
+}
+
+/* Opening Animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse for love message */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
