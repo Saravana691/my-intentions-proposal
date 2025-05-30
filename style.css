@@ -28,8 +28,10 @@ h1 {
 .poem p {
   margin: 1rem 0;
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  text-align: justify;
 }
+
 
 button {
   background: #ff69b4;
